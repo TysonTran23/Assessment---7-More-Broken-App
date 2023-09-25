@@ -88,8 +88,10 @@ function timeToWords(time) {
     }
   }
   //Grab words according to string
-  const hoursToWords = numbersToWords[numericHour.toString()];
+  const hoursToWords = numbersToWords[numericHour.toString().padStart(2, "0")];
   const minutesInWords = numbersToWords[minutes];
 
   return `${hoursToWords} ${minutesInWords}${suffix}`;
 }
+
+module.exports = timeToWords;
